@@ -1,0 +1,85 @@
+package pages
+
+import "website/components"
+import "strings"
+
+type Project struct {
+	Name        string
+	Description string
+	Stack       []string
+	Website     *string
+	Source      *string
+}
+
+var projects = []Project{
+	{
+		Name:        "vsrg-mirror",
+		Description: "A faster mapset mirror for the rhythm game Quaver that lets tools fetch maps without logging in",
+		Stack:       []string{"TypeScript", "Next.js", "MySQL", "AWS"},
+		Website:     new("https://vsrg-mirror.vercel.app"),
+		Source:      new("https://github.com/vsrg-tools/vsrg-mirror"),
+	},
+	{
+		Name:        "vsrg2mp4",
+		Description: "A replay renderer for Quaver that exports gameplay as video",
+		Stack:       []string{"Rust", "FFmpeg"},
+		Source:      new("https://github.com/vsrg-tools/vsrg2mp4"),
+	},
+	{
+		Name:        "osscord",
+		Description: "A Discord bot with osu! related features",
+		Stack:       []string{"TypeScript", "Next.js", "MongoDB", "Redis"},
+		Website:     new("https://osscord-web-git-master-maskeddd.vercel.app"),
+		Source:      new("https://github.com/osscord"),
+	},
+	{
+		Name:        "Click",
+		Description: "A fast autoclicker for Windows, macOS and Linux",
+		Stack:       []string{"Rust", "egui"},
+		Source:      new("https://github.com/maskeddd/click"),
+	},
+	{
+		Name:        "Grumpets",
+		Description: "Smart contracts for an Ethereum NFT collection, including allowlist minting, with 430 ETH in trading volume",
+		Stack:       []string{"Solidity"},
+		Website:     new("https://opensea.io/collection/grumpetsnft"),
+	},
+	{
+		Name:        "This site",
+		Description: "The one you're looking at right now",
+		Stack:       []string{"Go", "templ"},
+		Source:      new("https://github.com/maskeddd/website"),
+	},
+}
+
+templ Programming() {
+	@components.Layout("programming") {
+		<div class="flex flex-col gap-4">
+			for _, project := range projects {
+				@components.Card() {
+					<div class="flex flex-col gap-4">
+						<div>
+							<div class="flex items-center justify-between">
+								<h2 class="text-xl font-medium">{ project.Name }</h2>
+								<div class="divided flex gap-2">
+									if project.Source != nil {
+										@components.ExternalLink(*project.Source) {
+											Src
+										}
+									}
+									if project.Website != nil {
+										@components.ExternalLink(*project.Website) {
+											Site
+										}
+									}
+								</div>
+							</div>
+							<p class="text-pretty text-foreground/80">{ project.Description }</p>
+						</div>
+						<p class="text-sm italic">{ strings.Join(project.Stack, ", ") }</p>
+					</div>
+				}
+			}
+		</div>
+	}
+}

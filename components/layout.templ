@@ -1,0 +1,25 @@
+package components
+
+import "fmt"
+
+templ Layout(title string) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+			<title>{ fmt.Sprintf("%s – cody say", title) }</title>
+			<link rel="preload" href="/fonts/nunito-sans.ttf" as="font" type="font/ttf" crossorigin/>
+			<link rel="stylesheet" href="/css/style.css"/>
+			<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js"></script>
+			<script>document.documentElement.dataset.theme = localStorage.theme || "auto"</script>
+		</head>
+		<body class="mx-auto flex min-h-dvh max-w-3xl flex-col bg-background p-4 text-foreground lowercase selection:bg-foreground selection:text-background">
+			@Navbar()
+			<main class="flex-1">
+				{ children... }
+			</main>
+			@Footer()
+		</body>
+	</html>
+}
