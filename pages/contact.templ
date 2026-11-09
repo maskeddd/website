@@ -1,0 +1,21 @@
+package pages
+
+import "website/components"
+
+const (
+	email  = "me@indent.lol"
+	github = "github.com/maskeddd"
+)
+
+templ Contact() {
+	@components.Layout("contact") {
+		<div class="flex flex-col items-center gap-1">
+			@components.ExternalLink("mailto:" + email) {
+				{ email }
+			}
+			@components.ExternalLink("https://" + github) {
+				{ github }
+			}
+		</div>
+	}
+}

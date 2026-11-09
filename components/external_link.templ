@@ -1,7 +1,15 @@
 package components
 
+import "strings"
+
 templ ExternalLink(href string) {
-	<a href={ href } target="_blank" class="decoration-foreground/40 hover:decoration-foreground underline">
+	<a
+		href={ href }
+		if !strings.HasPrefix(href, "mailto:") {
+			target="_blank"
+		}
+		class="decoration-foreground/40 hover:decoration-foreground underline"
+	>
 		{ children... }
 	</a>
 }
