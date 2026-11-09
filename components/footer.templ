@@ -6,7 +6,7 @@ templ Footer() {
 	<footer
 		class="pt-12 pb-8 text-center"
 		x-data="{ theme: document.documentElement.dataset.theme }"
-		x-effect="document.documentElement.dataset.theme = theme; localStorage.theme = theme"
+		x-effect="setTheme(theme); localStorage.theme = theme"
 	>
 		<ul class="divided flex justify-center gap-2">
 			for _, t := range themes {

@@ -25,8 +25,12 @@
   :root {
     color-scheme: light dark;
 
-    &[data-theme="light"] { color-scheme: light; }
-    &[data-theme="dark"] { color-scheme: dark; }
+    &[data-theme="light"] {
+      color-scheme: light;
+    }
+    &[data-theme="dark"] {
+      color-scheme: dark;
+    }
   }
 
   a,
@@ -48,5 +52,6 @@
     content: "/";
     display: inline-block;
     margin-right: 0.5rem;
+    opacity: 0.6;
   }
 }

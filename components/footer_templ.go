@@ -28,7 +28,7 @@ func Footer() templ.Component {
 		}
 		ctx = templ.InitializeContext(ctx)
 		ctx = templ.ClearChildren(ctx)
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<footer class=\"pt-12 pb-8 text-center\" x-data=\"{ theme: document.documentElement.dataset.theme }\" x-effect=\"document.documentElement.dataset.theme = theme; localStorage.theme = theme\"><ul class=\"divided flex justify-center gap-2\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<footer class=\"pt-12 pb-8 text-center\" x-data=\"{ theme: document.documentElement.dataset.theme }\" x-effect=\"setTheme(theme); localStorage.theme = theme\"><ul class=\"divided flex justify-center gap-2\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

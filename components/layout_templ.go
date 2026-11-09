@@ -9,8 +9,6 @@ package components
 import "github.com/a-h/templ"
 import templruntime "github.com/a-h/templ/runtime"
 
-import "fmt"
-
 func Layout(title string) templ.Component {
 	return templruntime.GeneratedTemplate(func(templ_7745c5c3_Input templruntime.GeneratedComponentInput) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_W, ctx := templ_7745c5c3_Input.Writer, templ_7745c5c3_Input.Context
@@ -34,15 +32,15 @@ func Layout(title string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		var templ_7745c5c3_Var2 string
-		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(fmt.Sprintf("%s – cody say", title))
+		templ_7745c5c3_Var2, templ_7745c5c3_Err = templ.JoinStringErrs(title + " – cody say")
 		if templ_7745c5c3_Err != nil {
-			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/layout.templ`, Line: 11, Col: 49}
+			return templ.Error{Err: templ_7745c5c3_Err, FileName: `components/layout.templ`, Line: 9, Col: 35}
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ_7745c5c3_Var2))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"preload\" href=\"/fonts/nunito-sans.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>document.documentElement.dataset.theme = localStorage.theme || \"auto\"</script></head><body class=\"bg-background text-foreground selection:bg-foreground selection:text-background mx-auto flex min-h-dvh max-w-3xl flex-col p-4 lowercase\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"preload\" href=\"/fonts/nunito-sans.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>\n\t\t\t\tfunction setTheme(theme) {\n\t\t\t\t\tdocument.documentElement.dataset.theme = theme\n\t\t\t\t\tdocument.querySelector(\"link[rel=icon]\").href = theme === \"auto\" ? \"/favicon.svg\" : \"/favicon-\" + theme + \".svg\"\n\t\t\t\t}\n\t\t\t\tsetTheme(localStorage.theme || \"auto\")\n\t\t\t</script></head><body class=\"bg-background text-foreground selection:bg-foreground selection:text-background mx-auto flex min-h-dvh max-w-3xl flex-col p-4 lowercase\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
