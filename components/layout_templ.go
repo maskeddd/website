@@ -42,7 +42,7 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"preload\" href=\"/fonts/nunito-sans.ttf\" as=\"font\" type=\"font/ttf\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>document.documentElement.dataset.theme = localStorage.theme || \"auto\"</script></head><body class=\"mx-auto flex min-h-dvh max-w-3xl flex-col bg-background p-4 text-foreground lowercase selection:bg-foreground selection:text-background\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"preload\" href=\"/fonts/nunito-sans.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>document.documentElement.dataset.theme = localStorage.theme || \"auto\"</script></head><body class=\"bg-background text-foreground selection:bg-foreground selection:text-background mx-auto flex min-h-dvh max-w-3xl flex-col p-4 lowercase\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
