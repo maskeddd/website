@@ -20,14 +20,8 @@
           packages = with pkgs; [
             go
             gopls
+            nodejs
             tailwindcss_4
-
-            (writeShellScriptBin "templ" ''
-              exec go tool templ "$@"
-            '')
-            (writeShellScriptBin "air" ''
-              exec go tool air "$@"
-            '')
           ];
         };
       }
