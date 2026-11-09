@@ -22,8 +22,8 @@ type route struct {
 
 var routes = []route{
 	{"/", "About", pages.Index()},
-	{"/programming/", "Programming", pages.Programming()},
-	{"/contact/", "Contact", pages.Contact()},
+	{"/programming", "Programming", pages.Programming()},
+	{"/contact", "Contact", pages.Contact()},
 }
 
 func main() {
