@@ -6,6 +6,7 @@ import (
 	"log"
 	"net/http"
 	"os"
+	"path"
 	"path/filepath"
 
 	"website/components"
@@ -47,6 +48,9 @@ func main() {
 		files := http.FileServer(http.Dir(rootPath))
 		handler := http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 			w.Header().Set("Cache-Control", "no-store")
+			if r.URL.Path != "/" && path.Ext(r.URL.Path) == "" {
+				r.URL.Path += ".html"
+			}
 			files.ServeHTTP(w, r)
 		})
 		log.Printf("Preview server listening on http://%s", *addr)
@@ -55,12 +59,16 @@ func main() {
 }
 
 func writePage(root string, r route, nav []components.NavLink) error {
-	dir := filepath.Join(root, r.Path)
-	if err := os.MkdirAll(dir, 0o755); err != nil {
+	name := r.Path + ".html"
+	if r.Path == "/" {
+		name = "index.html"
+	}
+	file := filepath.Join(root, name)
+	if err := os.MkdirAll(filepath.Dir(file), 0o755); err != nil {
 		return err
 	}
 
-	f, err := os.Create(filepath.Join(dir, "index.html"))
+	f, err := os.Create(file)
 	if err != nil {
 		return err
 	}
