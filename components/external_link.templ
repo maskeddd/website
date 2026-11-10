@@ -8,7 +8,7 @@ templ ExternalLink(href string) {
 		if !strings.HasPrefix(href, "mailto:") {
 			target="_blank"
 		}
-		class="decoration-foreground/40 hover:decoration-foreground underline"
+		class="external-link"
 	>
 		{ children... }
 	</a>

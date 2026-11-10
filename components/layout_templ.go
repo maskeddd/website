@@ -40,7 +40,7 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"preload\" href=\"/fonts/nunito-sans.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>\n\t\t\t\tfunction setTheme(theme) {\n\t\t\t\t\tdocument.documentElement.dataset.theme = theme\n\t\t\t\t\tdocument.querySelector(\"link[rel=icon]\").href = theme === \"auto\" ? \"/favicon.svg\" : \"/favicon-\" + theme + \".svg\"\n\t\t\t\t}\n\t\t\t\tsetTheme(localStorage.theme || \"auto\")\n\t\t\t</script></head><body class=\"bg-background text-foreground selection:bg-foreground selection:text-background mx-auto flex min-h-dvh max-w-3xl flex-col p-4 lowercase\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"icon\" href=\"/favicon.svg\" type=\"image/svg+xml\"><link rel=\"preload\" href=\"/fonts/nunito-sans.woff2\" as=\"font\" type=\"font/woff2\" crossorigin><link rel=\"stylesheet\" href=\"/css/style.css\"><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js\"></script><script>\n\t\t\t\tfunction setTheme(theme) {\n\t\t\t\t\tdocument.documentElement.dataset.theme = theme\n\t\t\t\t\tdocument.querySelector(\"link[rel=icon]\").href = theme === \"auto\" ? \"/favicon.svg\" : \"/favicon-\" + theme + \".svg\"\n\t\t\t\t}\n\t\t\t\tsetTheme(localStorage.theme || \"auto\")\n\t\t\t</script></head><body>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -48,7 +48,7 @@ func Layout(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<main class=\"flex-1\">")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "<main>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

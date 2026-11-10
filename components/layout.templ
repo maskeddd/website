@@ -19,9 +19,9 @@ templ Layout(title string) {
 				setTheme(localStorage.theme || "auto")
 			</script>
 		</head>
-		<body class="bg-background text-foreground selection:bg-foreground selection:text-background mx-auto flex min-h-dvh max-w-3xl flex-col p-4 lowercase">
+		<body>
 			@Navbar()
-			<main class="flex-1">
+			<main>
 				{ children... }
 			</main>
 			@Footer()

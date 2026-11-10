@@ -40,7 +40,7 @@ func Index() templ.Component {
 				}()
 			}
 			ctx = templ.InitializeContext(ctx)
-			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<p class=\"text-center\">Cody is a full-stack developer and computer science graduate from Brisbane, Australia, with a particular focus on frontend development, web design and brand identity.</p>")
+			templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 1, "<p class=\"intro\">Cody is a full-stack developer and computer science graduate from Brisbane, Australia, with a particular focus on frontend development, web design and brand identity.</p>")
 			if templ_7745c5c3_Err != nil {
 				return templ_7745c5c3_Err
 			}

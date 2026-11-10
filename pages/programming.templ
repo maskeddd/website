@@ -54,14 +54,14 @@ var projects = []Project{
 
 templ Programming() {
 	@components.Layout("programming") {
-		<div class="flex flex-col gap-4">
+		<div class="projects">
 			for _, project := range projects {
 				@components.Card() {
-					<div class="flex flex-col gap-4">
+					<div class="project">
 						<div>
-							<div class="flex items-center justify-between">
-								<h2 class="text-xl font-medium">{ project.Name }</h2>
-								<div class="divided flex gap-2">
+							<div class="project-title">
+								<h2>{ project.Name }</h2>
+								<div class="divided">
 									if project.Source != nil {
 										@components.ExternalLink(*project.Source) {
 											Src
@@ -74,9 +74,9 @@ templ Programming() {
 									}
 								</div>
 							</div>
-							<p class="text-foreground/80 text-pretty">{ project.Description }</p>
+							<p class="project-description">{ project.Description }</p>
 						</div>
-						<p class="text-sm italic">{ strings.Join(project.Stack, ", ") }</p>
+						<p class="project-stack">{ strings.Join(project.Stack, ", ") }</p>
 					</div>
 				}
 			}

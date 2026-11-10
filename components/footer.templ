@@ -1,21 +1,21 @@
 package components
 
-var themes = []string{"auto", "light", "dark"}
+import "strings"
+
+var themes = []string{"Auto", "Light", "Dark"}
 
 templ Footer() {
 	<footer
-		class="pt-12 pb-8 text-center"
 		x-data="{ theme: document.documentElement.dataset.theme }"
 		x-effect="setTheme(theme); localStorage.theme = theme"
 	>
-		<ul class="divided flex justify-center gap-2">
+		<ul class="divided">
 			for _, t := range themes {
 				<li>
 					<button
 						type="button"
-						x-on:click={ "theme = '" + t + "'" }
-						x-bind:aria-pressed={ "theme === '" + t + "'" }
-						class="text-foreground/60 aria-pressed:text-foreground"
+						x-on:click={ "theme = '" + strings.ToLower(t) + "'" }
+						x-bind:aria-pressed={ "theme === '" + strings.ToLower(t) + "'" }
 					>{ t }</button>
 				</li>
 			}

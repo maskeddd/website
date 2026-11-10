@@ -6,15 +6,14 @@ type NavLink struct {
 }
 
 templ Navbar() {
-	<header class="grid place-items-center gap-4 py-8">
-		<a href="/" class="no-underline"><h1 class="text-3xl font-medium">Cody Say</h1></a>
+	<header>
+		<a href="/"><h1>Cody Say</h1></a>
 		<nav>
-			<ul class="divided flex gap-2">
+			<ul class="divided">
 				for _, link := range NavLinks(ctx) {
 					<li>
 						<a
 							href={ link.Href }
-							class="text-foreground/60 aria-[current=page]:text-foreground"
 							if link.Href == CurrentPath(ctx) {
 								aria-current="page"
 							}
