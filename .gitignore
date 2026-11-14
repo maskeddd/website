@@ -1,5 +1,14 @@
+# hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# nix / direnv
 .direnv/
 .envrc
-tmp/
-/dist/
+
+# cloudflare
 .wrangler/
+
+# editor
+.helix/

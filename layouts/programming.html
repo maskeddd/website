@@ -1,0 +1,22 @@
+{{ define "main" }}
+<div class="projects">
+  {{ range .Params.projects }}
+  <div class="card">
+    <div class="project">
+      <div>
+        <div class="project-title">
+          <h2>{{ .name }}</h2>
+          <div class="divided">
+            {{ with .source }}<a href="{{ . }}" class="external-link" target="_blank">Src</a>{{ end
+            }} {{ with .website }}<a href="{{ . }}" class="external-link" target="_blank">Site</a>{{
+            end }}
+          </div>
+        </div>
+        <p class="project-description">{{ .description }}</p>
+      </div>
+      <p class="project-stack">{{ delimit .stack ", " }}</p>
+    </div>
+  </div>
+  {{ end }}
+</div>
+{{ end }}

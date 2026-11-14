@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ .Title }} – {{ site.Title }}</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="/fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin />
+    {{ $css := resources.Get "css/style.css" | minify | fingerprint }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.17.5/dist/cdn.min.js"></script>
+    <script>
+      function setTheme(theme) {
+        document.documentElement.dataset.theme = theme
+        document.querySelector("link[rel=icon]").href = theme === "auto" ? "/favicon.svg" : "/favicon-" + theme + ".svg"
+      }
+      setTheme(localStorage.theme || "auto")
+    </script>
+  </head>
+  <body>
+    {{ partial "navbar.html" . }}
+    <main>{{ block "main" . }}{{ end }}</main>
+    {{ partial "footer.html" . }}
+  </body>
+</html>

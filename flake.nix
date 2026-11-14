@@ -17,12 +17,7 @@
       in
       {
         devShells.default = pkgs.mkShell {
-          packages = with pkgs; [
-            go
-            gopls
-
-            (writeShellScriptBin "templ" ''exec go tool templ "$@"'')
-          ];
+          packages = [ pkgs.hugo ];
         };
       }
     );

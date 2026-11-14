@@ -1,0 +1,16 @@
+<footer
+  x-data="{ theme: document.documentElement.dataset.theme }"
+  x-effect="setTheme(theme); localStorage.theme = theme"
+>
+  <ul class="divided">
+    {{ range slice "Auto" "Light" "Dark" }}
+      <li>
+        <button
+          type="button"
+          x-on:click="theme = '{{ lower . }}'"
+          x-bind:aria-pressed="theme === '{{ lower . }}'"
+        >{{ . }}</button>
+      </li>
+    {{ end }}
+  </ul>
+</footer>

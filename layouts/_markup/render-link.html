@@ -1,0 +1,7 @@
+{{- $u := urls.Parse .Destination -}}
+<a href="{{ .Destination | safeURL }}"
+  {{- if $u.IsAbs }} class="external-link"{{ end }}
+  {{- if and $u.IsAbs (ne $u.Scheme "mailto") }} target="_blank"{{ end }}>
+  {{- .Text -}}
+</a>
+{{- /* chomp trailing newline */ -}}

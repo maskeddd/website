@@ -1,0 +1,19 @@
+baseURL = "https://me.indent.lol/"
+locale = "en-us"
+title = "cody say"
+disableKinds = ["taxonomy", "term", "rss", "sitemap"]
+
+[[menus.main]]
+name = "about"
+pageRef = "/"
+weight = 1
+
+[[menus.main]]
+name = "programming"
+pageRef = "/programming"
+weight = 2
+
+[[menus.main]]
+name = "contact"
+pageRef = "/contact"
+weight = 3
